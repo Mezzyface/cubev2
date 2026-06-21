@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weiss Cube — Deck Profile</title>
+<style>
+:root{--cw:150px;--ch:calc(var(--cw)*1290/936);--off:calc(var(--ch)*0.165);
+ --bg:#0e1014;--panel:#161a20;--text:#e7eaef;--muted:#8a93a0;--accent:#e2b53c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,"Segoe UI",Roboto,Arial,sans-serif}
+nav{display:flex;gap:14px;justify-content:center;padding:10px;border-bottom:1px solid #20262e;background:#11141a}
+nav a{color:var(--muted);text-decoration:none;font-size:14px;padding:4px 12px;border-radius:7px}
+nav a.active{color:#fff;background:#222833}
+nav a:hover{color:#fff}
+header{padding:16px 24px 6px;text-align:center}
+header h1{margin:0;font-size:clamp(22px,3.5vw,32px)}
+header p{margin:6px 0 0;color:var(--muted);font-size:14px}
+.controls{position:sticky;top:0;z-index:30;background:rgba(14,16,20,.94);backdrop-filter:blur(6px);
+ border-bottom:1px solid #20262e;display:flex;gap:18px;justify-content:center;align-items:center;padding:10px;flex-wrap:wrap}
+.controls label{color:var(--muted);font-size:13px;display:flex;align-items:center;gap:8px}
+.controls input[type=range]{width:220px;accent-color:var(--accent)}
+.hint{color:var(--muted);font-size:12px}
+main{padding:10px clamp(10px,3vw,36px) 70px}
+.colorsec{margin:18px 0 26px}
+.colorhdr{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:600;margin:0 0 6px;padding:7px 12px;border-radius:9px}
+.colorhdr .sub{font-weight:400;font-size:13px;color:rgba(255,255,255,.9)}
+.lvrow{display:flex;align-items:flex-start;gap:6px;padding:8px 4px;border-bottom:1px dashed #232a33}
+.lvrow:last-child{border-bottom:0}
+.lvlab{flex:0 0 46px;color:var(--muted);font-size:12px;font-weight:600;padding-top:6px}
+.stacks{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:flex-start}
+.stack{position:relative;width:var(--cw);cursor:pointer}
+.stack img{position:absolute;left:0;width:var(--cw);height:var(--ch);border-radius:6px;object-fit:cover;
+ background:#0b0d11;border:1px solid rgba(0,0,0,.45);box-shadow:0 2px 4px rgba(0,0,0,.55)}
+.stack:hover img{outline:2px solid var(--accent)}
+.stack .cnt{position:absolute;right:-6px;bottom:-6px;z-index:999;background:#111;border:1px solid #3a3f47;color:#fff;
+ font-size:12px;font-weight:700;border-radius:11px;padding:1px 7px;box-shadow:0 1px 3px rgba(0,0,0,.6)}
+.stack .nm{position:absolute;left:0;right:0;bottom:-17px;z-index:998;text-align:center;font-size:10px;color:var(--muted);
+ white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(6,7,9,.95);display:none;align-items:center;justify-content:center;z-index:2000}
+.lb.open{display:flex}
+.lb img{max-width:78vw;max-height:92vh;object-fit:contain;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.lbframe{position:relative;display:inline-block;line-height:0}
+.lbcnt{position:absolute;right:14px;bottom:14px;width:58px;height:58px;border-radius:50%;background:rgba(17,17,17,.92);border:2px solid #fff;color:#fff;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.6);line-height:1}
+.lb .nav{position:absolute;top:0;bottom:0;width:16vw;min-width:60px;border:0;background:transparent;color:#fff;font-size:46px;cursor:pointer;opacity:.5}
+.lb .nav:hover{opacity:1}
+.lb .prev{left:0}.lb .next{right:0}
+.lb .close{position:absolute;top:14px;right:20px;background:transparent;border:0;color:#fff;font-size:34px;cursor:pointer;opacity:.75}
+.lb .close:hover{opacity:1}
+.lb .cap{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#e7eaef;font-size:15px;text-shadow:0 1px 4px #000}
+.lb .cap b{font-size:16px}
+@media (max-width:640px){.lb img{max-width:94vw}.lb .nav{font-size:32px;min-width:44px}}
+</style>
+</head>
+<body>
+<nav><a href="index.html">Gallery</a><a href="deck.html" class="active">Deck Profile</a></nav>
+<header>
+  <h1>Weiss Cube — Deck Profile</h1>
+  <p id="sum"></p>
+</header>
+<div class="controls">
+  <label>Card size <input id="size" type="range" min="100" max="380" value="150" step="5"></label>
+  <label><input type="checkbox" id="names"> show names</label>
+  <span class="hint">Click a card to enlarge · ← → to flip · Esc to close</span>
+</div>
+<main id="main"></main>
+<div class="lb" id="lb">
+  <button class="close" id="lbClose">&times;</button>
+  <button class="nav prev" id="lbPrev">&#10094;</button>
+  <div class="lbframe"><img id="lbImg" alt=""><span class="lbcnt" id="lbCnt"></span></div>
+  <button class="nav next" id="lbNext">&#10095;</button>
+  <div class="cap" id="lbCap"></div>
+</div>
+<script src="cards.js"></script>
+<script>
+const DIR = window.DIR || "pngs/";
+const CARDS = window.CARDS || [];
+const ORDER = window.COLOR_ORDER || ["yellow","green","red","blue","purple"];
+const COLHEX = { yellow:"#9a7a16", green:"#2f6a28", red:"#9c2f2b", blue:"#27537f", purple:"#5d3f86", unknown:"#444" };
+const src = f => DIR + encodeURIComponent(f);
+const main = document.getElementById("main");
+let flat = [];               // display-ordered card list (for lightbox nav)
+
+function build(){
+  main.innerHTML=""; flat=[];
+  const showNames = document.getElementById("names").checked;
+  let totCards=0, totCopies=0;
+  ORDER.concat(["unknown"]).forEach(col=>{
+    const list = CARDS.filter(c=>c.color===col);
+    if(!list.length) return;
+    const copies = list.reduce((s,c)=>s+(c.copies||1),0);
+    totCards+=list.length; totCopies+=copies;
+    const sec=document.createElement("section"); sec.className="colorsec";
+    const hdr=document.createElement("div"); hdr.className="colorhdr"; hdr.style.background=COLHEX[col];
+    hdr.innerHTML = col.charAt(0).toUpperCase()+col.slice(1)+' <span class="sub">'+list.length+' cards · '+copies+' copies</span>';
+    sec.appendChild(hdr);
+    const levels=[...new Set(list.map(c=>c.level))].sort((a,b)=>(a==null?99:a)-(b==null?99:b));
+    levels.forEach(lv=>{
+      const cards=list.filter(c=>c.level===lv).sort((a,b)=>(b.copies||1)-(a.copies||1)||a.name.localeCompare(b.name,undefined,{numeric:true}));
+      const row=document.createElement("div"); row.className="lvrow";
+      const lab=document.createElement("div"); lab.className="lvlab"; lab.textContent= lv==null?"—":"Lv "+lv;
+      const stacks=document.createElement("div"); stacks.className="stacks";
+      cards.forEach(c=>{
+        const idx=flat.length; flat.push(c);
+        const n=Math.max(1,c.copies||1);
+        const st=document.createElement("div"); st.className="stack";
+        st.style.height="calc(var(--ch) + "+(n-1)+" * var(--off))";
+        st.style.marginBottom = showNames ? "20px" : "0";
+        for(let i=0;i<n;i++){
+          const img=document.createElement("img");
+          img.loading="lazy"; img.src=src(c.file); img.alt=c.name;
+          img.style.top="calc("+i+" * var(--off))"; img.style.zIndex=i;
+          st.appendChild(img);
+        }
+        if(n>1){const b=document.createElement("span");b.className="cnt";b.textContent="×"+n;st.appendChild(b);}
+        if(showNames){const nm=document.createElement("div");nm.className="nm";nm.textContent=c.name;st.appendChild(nm);}
+        st.addEventListener("click",()=>openLb(idx));
+        stacks.appendChild(st);
+      });
+      row.appendChild(lab); row.appendChild(stacks); sec.appendChild(row);
+    });
+    main.appendChild(sec);
+  });
+  document.getElementById("sum").textContent = totCards+" unique cards · "+totCopies+" total copies";
+}
+// lightbox
+const lb=document.getElementById("lb"), lbImg=document.getElementById("lbImg"), lbCap=document.getElementById("lbCap");
+let cur=0;
+function showLb(){
+  const c=flat[cur];
+  lbImg.src=src(c.file); lbImg.alt=c.name; document.getElementById("lbCnt").textContent="×"+(c.copies||1);
+  lbCap.innerHTML="<b>"+c.name+"</b>  ·  "+c.color.charAt(0).toUpperCase()+c.color.slice(1)+
+    (c.level==null?"":" · Lv "+c.level);
+}
+const openLb=i=>{cur=i; showLb(); lb.classList.add("open");};
+const closeLb=()=>lb.classList.remove("open");
+const stepLb=d=>{cur=(cur+d+flat.length)%flat.length; showLb();};
+document.getElementById("lbClose").addEventListener("click",closeLb);
+document.getElementById("lbPrev").addEventListener("click",e=>{e.stopPropagation();stepLb(-1);});
+document.getElementById("lbNext").addEventListener("click",e=>{e.stopPropagation();stepLb(1);});
+lb.addEventListener("click",e=>{if(e.target===lb)closeLb();});
+document.addEventListener("keydown",e=>{
+  if(!lb.classList.contains("open"))return;
+  if(e.key==="Escape")closeLb();
+  else if(e.key==="ArrowLeft")stepLb(-1);
+  else if(e.key==="ArrowRight")stepLb(1);
+});
+document.getElementById("size").addEventListener("input",e=>{document.documentElement.style.setProperty("--cw",e.target.value+"px");});
+document.getElementById("names").addEventListener("change",build);
+build();
+</script>
+</body>
+</html>

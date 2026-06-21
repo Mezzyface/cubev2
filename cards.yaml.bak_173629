@@ -1,0 +1,38 @@
+# Cube gallery card data — edit freely, then run: python build_site.py
+# Per card: name (display), color (yellow/green/red/blue/purple), level (0-3), copies (default 1).
+# Cards in pngs/ not listed here get an auto-detected color and no level.
+
+cards:
+  "37.png": { name: "37", color: blue, level: 0, copies: 1 }
+  "alient.png": { name: aliEn T, color: yellow, level: 1, copies: 1 }
+  "apple.png": { name: Apple, color: blue, level: 0, copies: 1 }
+  "ballonparty.png": { name: Balloon Party, color: blue, level: 0, copies: 1 }
+  "Barbara.png": { name: Barbra, color: blue, level: 3, copies: 1 }
+  "Blonney.png": { name: Blonney, color: blue, level: 1, copies: 1 }
+  "buddyfairchild.png": { name: Buddy Fairchild, color: blue, level: 1, copies: 1 }
+  "BunnyBunny.png": { name: Bunny Bunny, color: yellow, level: 3, copies: 1 }
+  "cake.png": { name: Cake, color: blue, level: 1, copies: 1 }
+  "cristallo.png": { name: Cristallo, color: green, level: 1, copies: 1 }
+  "dancewithme.png": { name: Dance with me, color: green, level: 1, copies: 1 }
+  "DumplingPlatter.png": { name: Dumpling Platter, color: yellow, level: 2, copies: 1 }
+  "festivaltime.png": { name: Festival Time, color: blue, level: 2, copies: 1 }
+  "johnTitor.png": { name: John Titor, color: blue, level: 2, copies: 1 }
+  "laSource.png": { name: La Source, color: blue, level: 3, copies: 1 }
+  "Matilda.png": { name: Matilda, color: blue, level: 0, copies: 1 }
+  "MealTime.png": { name: Meal Time, color: yellow, level: 2, copies: 1 }
+  "mine.png": { name: Mine, color: red, level: 1, copies: 1 }
+  "Mondlicht.png": { name: Mondlicht, color: red, level: 1, copies: 1 }
+  "onion.png": { name: Onion, color: green, level: 3, copies: 1 }
+  "peptalk.png": { name: Pep Talk, color: red, level: 3, copies: 1 }
+  "pickles.png": { name: Pickles, color: blue, level: 0, copies: 1 }
+  "piday.png": { name: Pi Day, color: blue, level: 1, copies: 1 }
+  "puppetshow.png": { name: Puppet Show, color: green, level: 3, copies: 1 }
+  "RayGun.png": { name: Ray Gun, color: yellow, level: 3, copies: 1 }
+  "RedEnvelopes.png": { name: Red Envelopes, color: yellow, level: 1, copies: 1 }
+  "satsuki.png": { name: Satsuki, color: blue, level: 1, copies: 1 }
+  "SkyLantern.png": { name: Sky Lantern, color: yellow, level: 1, copies: 1 }
+  "sotheby.png": { name: Sotheby, color: red, level: 3, copies: 1 }
+  "spathodea.png": { name: Spathodea, color: blue, level: 3, copies: 1 }
+  "toothFairy.png": { name: Tooth Fairy, color: blue, level: 2, copies: 1 }
+  "TTT.png": { name: TTT, color: blue, level: 0, copies: 1 }
+  "x.png": { name: X, color: blue, level: 2, copies: 1 }

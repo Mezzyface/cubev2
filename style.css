@@ -35,4 +35,4 @@ main{padding:18px clamp(12px,3vw,40px) 60px}
 .lb .close{position:absolute;top:16px;right:22px;background:transparent;border:0;color:#fff;font-size:34px;cursor:pointer;opacity:.7;line-height:1}
 .lb .close:hover{opacity:1}
 .lb .lbcap{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#dfe4ea;font-size:15px;text-shadow:0 1px 4px #000}
-@media (max-width:600px){.lb .nav{font-size:30px;min-width:44px}}
+.grouphdr{grid-column:1/-1;display:flex;align-items:center;gap:9px

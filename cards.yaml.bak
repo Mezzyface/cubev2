@@ -1,0 +1,74 @@
+# Cube gallery card data — edit freely, then run: python build_site.py
+# Per card: name (display), color (yellow/green/red/blue/purple), level (0-3), copies.
+
+cards:
+  "37.png": { name: "37", color: blue, level: 0, copies: 2 }
+  "aknight.png": { name: "A Knight", color: green, level: 0, copies: 3 }
+  "alient.png": { name: "aliEn T", color: yellow, level: 1, copies: 6 }
+  "ananlee.png": { name: "An-an Lee", color: red, level: 0, copies: 4 }
+  "apple.png": { name: "Apple", color: blue, level: 0, copies: 2 }
+  "babyblue.png": { name: "Baby Blue", color: green, level: 2, copies: 2 }
+  "ballonparty.png": { name: "Balloon Party", color: blue, level: 0, copies: 4 }
+  "Barbara.png": { name: "Barbra", color: blue, level: 3, copies: 4 }
+  "bette.png": { name: "Bette", color: red, level: 1, copies: 2 }
+  "bkomblume.png": { name: "Bkornblume", color: green, level: 3, copies: 3 }
+  "Blonney.png": { name: "Blonney", color: blue, level: 1, copies: 6 }
+  "buddyfairchild.png": { name: "Buddy Fairchild", color: blue, level: 1, copies: 2 }
+  "BunnyBunny.png": { name: "Bunny Bunny", color: yellow, level: 3, copies: 3 }
+  "cake.png": { name: "Cake", color: blue, level: 1, copies: 2 }
+  "centurion.png": { name: "Centurion", color: red, level: 3, copies: 3 }
+  "changling.png": { name: "Changeling", color: yellow, level: 3, copies: 4 }
+  "charlie.png": { name: "Charlie", color: green, level: 2, copies: 2 }
+  "click.png": { name: "Click", color: red, level: 3, copies: 3 }
+  "cristallo.png": { name: "Cristallo", color: green, level: 1, copies: 6 }
+  "dancewithme.png": { name: "Dance with me", color: green, level: 1, copies: 2 }
+  "darleyclatter.png": { name: "Darley Clatter", color: yellow, level: 0, copies: 3 }
+  "dikke.png": { name: "Dikke", color: green, level: 3, copies: 3 }
+  "druvis3.png": { name: "Druvis III", color: green, level: 0, copies: 2 }
+  "DumplingPlatter.png": { name: "Dumpling Platter", color: yellow, level: 2, copies: 2 }
+  "eagle.png": { name: "Eagle", color: green, level: 1, copies: 3 }
+  "eternity.png": { name: "Eternity", color: yellow, level: 0, copies: 2 }
+  "festivaltime.png": { name: "Festival Time", color: blue, level: 2, copies: 2 }
+  "johnTitor.png": { name: "John Titor", color: blue, level: 2, copies: 2 }
+  "laSource.png": { name: "La Source", color: blue, level: 3, copies: 3 }
+  "leilani.png": { name: "Leilani", color: red, level: 0, copies: 3 }
+  "lilya.png": { name: "Lilya", color: green, level: 0, copies: 4 }
+  "Matilda.png": { name: "Matilda", color: blue, level: 0, copies: 4 }
+  "matildabouanich.png": { name: "Matilda Bouanich", color: red, level: 0, copies: 4 }
+  "MealTime.png": { name: "Meal Time", color: yellow, level: 2, copies: 2 }
+  "medicinepocket.png": { name: "Medicine Pocket", color: red, level: 2, copies: 2 }
+  "mesmerjr.png": { name: "Mesmer Jr.", color: yellow, level: 3, copies: 3 }
+  "mine.png": { name: "Mine?", color: red, level: 1, copies: 2 }
+  "Mondlicht.png": { name: "Mondlicht", color: red, level: 1, copies: 6 }
+  "mrmoissan.png": { name: "Ms. Moissan", color: red, level: 1, copies: 2 }
+  "msradio.png": { name: "Ms. Radio", color: yellow, level: 0, copies: 4 }
+  "necrologist.png": { name: "Necrologist", color: red, level: 2, copies: 2 }
+  "nickbottom.png": { name: "Nick Bottom", color: green, level: 0, copies: 2 }
+  "oliverfog.png": { name: "Oliver Fog", color: green, level: 2, copies: 2 }
+  "onion.png": { name: "Onion", color: green, level: 3, copies: 4 }
+  "pavia.png": { name: "Pavia", color: green, level: 1, copies: 3 }
+  "peptalk.png": { name: "Pep Talk", color: red, level: 3, copies: 2 }
+  "pickles.png": { name: "Pickles", color: blue, level: 0, copies: 3 }
+  "piday.png": { name: "Pi Day", color: blue, level: 1, copies: 2 }
+  "poltergeist.png": { name: "Poltergeist", color: red, level: 1, copies: 2 }
+  "puppetshow.png": { name: "Puppet Show", color: green, level: 3, copies: 2 }
+  "rabies.png": { name: "Rabies", color: red, level: 0, copies: 2 }
+  "RayGun.png": { name: "Ray Gun", color: yellow, level: 3, copies: 2 }
+  "RedEnvelopes.png": { name: "Red Envelopes", color: yellow, level: 1, copies: 2 }
+  "regulus.png": { name: "Regulus", color: yellow, level: 0, copies: 3 }
+  "satsuki.png": { name: "Satsuki", color: blue, level: 1, copies: 2 }
+  "schneider.png": { name: "Schneider", color: yellow, level: 0, copies: 2 }
+  "SkyLantern.png": { name: "Sky Lantern", color: yellow, level: 1, copies: 4 }
+  "sonetto.png": { name: "Sonetto", color: yellow, level: 0, copies: 4 }
+  "sotheby.png": { name: "Sotheby", color: red, level: 3, copies: 4 }
+  "spathodea.png": { name: "Spathodea", color: blue, level: 3, copies: 3 }
+  "sputnik.png": { name: "Sputnik", color: yellow, level: 2, copies: 1 }
+  "sweetheart.png": { name: "Sweetheart", color: green, level: 0, copies: 4 }
+  "tennant.png": { name: "Tennant", color: red, level: 0, copies: 2 }
+  "thefool.png": { name: "The Fool", color: green, level: 0, copies: 3 }
+  "toothFairy.png": { name: "Tooth Fairy", color: blue, level: 2, copies: 2 }
+  "TTT.png": { name: "TTT", color: blue, level: 0, copies: 3 }
+  "twinssleep.png": { name: "Twins Sleep", color: red, level: 0, copies: 3 }
+  "voyager.png": { name: "Voyager", color: red, level: 2, copies: 2 }
+  "x.png": { name: "X", color: blue, level: 2, copies: 2 }
+  "newbabel.png": { name: "Ms. NewBabel", color: yellow, level: 2, copies: 1 }
