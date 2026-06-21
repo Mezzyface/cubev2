@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weiss Schwarz Cube</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Weiss Schwarz Cube</h1>
+  <p>A custom draft cube</p>
+</header>
+<div class="controls">
+  <label>Sort
+    <select id="sort">
+      <option value="name">Name</option>
+      <option value="color">Color</option>
+      <option value="levelup">Level &uarr;</option>
+      <option value="leveldown">Level &darr;</option>
+    </select>
+  </label>
+  <div class="chips">
+    <span class="chip active" data-color="all">All</span>
+    <span class="chip" data-color="yellow"><span class="dot" style="background:#e2b53c"></span>Yellow</span>
+    <span class="chip" data-color="green"><span class="dot" style="background:#4a9d3f"></span>Green</span>
+    <span class="chip" data-color="red"><span class="dot" style="background:#d8443f"></span>Red</span>
+    <span class="chip" data-color="blue"><span class="dot" style="background:#3a78c2"></span>Blue</span>
+    <span class="chip" data-color="purple"><span class="dot" style="background:#8a5cc4"></span>Purple</span>
+  </div>
+  <label>Size <input id="size" type="range" min="160" max="460" value="300" step="10"></label>
+  <span class="count" id="count"></span>
+</div>
+<main><div class="grid" id="grid"></div></main>
+<div class="lb" id="lb">
+  <button class="close" id="lbClose">&times;</button>
+  <button class="nav prev" id="lbPrev">&#10094;</button>
+  <img id="lbImg" alt="">
+  <button class="nav next" id="lbNext">&#10095;</button>
+  <div class="lbcap" id="lbCap"></div>
+</div>
+<script src="cards.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
